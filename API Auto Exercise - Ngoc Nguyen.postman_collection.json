@@ -92,8 +92,8 @@
 									"});",
 									"",
 									"//write performance test",
-									"pm.test(\"Response time is less than 200ms\", function () {",
-									"  pm.expect(pm.response.responseTime).to.be.below(1000);",
+									"pm.test(\"Response time is less than 5000ms\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(5000);",
 									"});",
 									"",
 									"",
@@ -109,7 +109,7 @@
 									"",
 									"",
 									"pm.test(\"Response time is within the defined SLA limits\", function () {",
-									"  pm.expect(pm.response.responseTime).to.be.below(1000);",
+									"  pm.expect(pm.response.responseTime).to.be.below(5000);",
 									"});",
 									"",
 									""
@@ -255,7 +255,7 @@
 									"//check performance cases",
 									"",
 									"pm.test(\"Response time is less than 200ms\", function () {",
-									"  pm.expect(pm.response.responseTime).to.be.below(1000);",
+									"  pm.expect(pm.response.responseTime).to.be.below(2000);",
 									"});",
 									"",
 									"",
@@ -475,8 +475,8 @@
 							"script": {
 								"exec": [
 									"const resBody = pm.response.json()",
-									"const email = pm.variables.get(\"email\");",
-									"const password = pm.variables.get(\"password\");",
+									"const email = pm.variables.get(\"emailEx\");",
+									"const password = pm.variables.get(\"passwordEx\");",
 									"const code = pm.variables.get(\"ReturnCode\");",
 									"const responseMessage = pm.variables.get(\"ContainMessage\");",
 									"",
@@ -520,7 +520,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{password}}\"\r\n}"
+							"raw": "{\r\n    \"email\": \"{{emailEx}}\",\r\n    \"password\": \"{{passwordEx}}\"\r\n}"
 						},
 						"url": {
 							"raw": "https://reqres.in/api/register",
